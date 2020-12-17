@@ -3,15 +3,40 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Todo List</title>
+        <title>To Do List</title>
         <meta name="description" content="this is a simple todo list">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./css/style.css">
     </head>
     <body>
-        <header></header>
-        <main></main>
-        <footer></footer>
+        <main>
+            <section class="container">
+                <div class="my-3">
+                  <h1>To Do List</h1>
+                  <form>
+                      <div class="my-3">
+                          <label for="input"></label>
+                          <input type="text" id="input" placeholder="Name..." class="todoInput" autofocus required>
+                          <button class="addBtn" type="submit" title="Add Item">Add Item</button>
+                      </div>
+                  </form>
+                  <div class="error my-3">
+                    <p>Please enter valid input</p>
+                  </div>
+                </div>
+                <div class="item-container">
+                    <!--
+                      <button class="completeTodo"><img src="./check.svg"></button>
+                      <input type="text" class="todoItem" disabled>
+                      <button class="editTodo"><img src="./edit-3.svg" alt="edit Todo"></button>
+                      <button class="deleteTodo"><img src="./trash-2.svg" alt="delete Todo"></button>
+                    -->
+                </div>
+            </section>
+            <div class="clear">
+                <button class="clearBtn my-3">Clear All</button>
+            </div>
+        </main>
         <script src="./scripts.js" async defer></script>
     </body>
 </html>
