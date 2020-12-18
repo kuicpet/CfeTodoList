@@ -7,7 +7,7 @@ const clearBox = document.querySelector(".clear");
 const clearButton = document.querySelector(".clearBtn");
 const errormessage = document.querySelector(".error");
 
-
+const todos = [];
 class todo {
     constructor(itemName){
         this.createDiv(itemName);
@@ -75,11 +75,23 @@ class todo {
     }
 }
 
+
+function getTodos() {
+    const savedTodo = localStorage.getItem("todos");
+    console.log(savedTodo);
+    return JSON.parse(savedTodo);
+    
+}
+
 function check(){
     if(input.value !== ""){
         new todo(input.value.trim());
+        todos.push(input.value, ...todos);
+        console.log(todos);
+        localStorage.setItem("todos", JSON.stringify(todos))
         input.value = "";
         clearBox.classList.remove("clear");
+
     } else {
         errormessage.classList.remove("error");
         errormessage.classList.add("show");
@@ -90,7 +102,12 @@ function check(){
     }
 }
 
+
+
+
 addButton.addEventListener("click", (e) => {
     e.preventDefault();
     check();
-})
+});
+
+getTodos();
