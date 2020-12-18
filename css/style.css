@@ -32,8 +32,8 @@ main {
     margin: 3rem auto;
 }
 .item-container {
-    border: 1px solid #eeeeee;
     padding: 1rem;
+    max-width: 100%;
 }
 .item {
     padding: 1rem;
@@ -95,6 +95,7 @@ form {
     background-color: #f8d7da;
     padding: 1rem;
     border-radius: 4px;
+    margin: 1rem;
 }
 .item {
     display: flex;
@@ -104,13 +105,17 @@ form {
     margin: 0 auto;
 }
 .todoItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 30rem;
     max-width: 80%;
     border: none;
     background: transparent;
-    padding: 1rem;
-    font-size: 1.3rem;
+    padding: 6px 12px;
+    font-size: 1rem;
     text-transform: capitalize;
+
 }
 .editTodo,.deleteTodo,.completeTodo{
     border: none;
@@ -157,5 +162,23 @@ form {
 @media only screen and (min-width: 576px){
     .container {
         max-width: 100%;
+    }
+}
+@media only screen and (max-width: 400px){
+    .todoInput {
+        display: flex;
+        width: 360px;
+        margin: 1rem auto;
+    }
+    .container {
+       max-width: 100%;
+        padding: 0;
+    }
+    .item-container {
+        padding: 0;
+        width: 100%;
+    }
+    .editTodo,.deleteTodo,.completeTodo {
+        padding: 8px 0;
     }
 }
